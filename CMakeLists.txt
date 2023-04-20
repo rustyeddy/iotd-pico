@@ -30,8 +30,8 @@ add_executable(iotd-pico iotd-pico.cpp )
 pico_set_program_name(iotd-pico "iotd-pico")
 pico_set_program_version(iotd-pico "0.1")
 
-pico_enable_stdio_uart(iotd-pico 1)
-pico_enable_stdio_usb(iotd-pico 0)
+pico_enable_stdio_uart(iotd-pico 0)
+pico_enable_stdio_usb(iotd-pico 1)
 
 # Add the standard library to the build
 target_link_libraries(iotd-pico

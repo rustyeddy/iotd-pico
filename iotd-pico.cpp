@@ -9,12 +9,11 @@
 #define I2C_PORT i2c0
 #define I2C_SDA 8
 #define I2C_SCL 9
+#define PICO_DEFAULT_LED_PIN 25
 
 int main()
 {
     stdio_init_all();
-
-    // I2C Initialisation. Using it at 400Khz.
     i2c_init(I2C_PORT, 400*1000);
     
     gpio_set_function(I2C_SDA, GPIO_FUNC_I2C);
@@ -22,7 +21,10 @@ int main()
     gpio_pull_up(I2C_SDA);
     gpio_pull_up(I2C_SCL);
 
-    puts("Hello, world!");
+    while (true) {
+        printf("Hello, world!\n");
+        sleep_ms(1000);
+    }
 
     return 0;
 }
